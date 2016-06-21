@@ -1,0 +1,28 @@
+img#normal {
+    width: 10%;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+#header-wrap {
+    text-align: center;
+    font-size: 37px;
+    font-family: sans-serif;
+    background: url("../images/QBlogo.svg");
+    background-repeat: no-repeat;
+    padding: 20px;
+    background-size: 7%;
+    background-position: 10px;
+    border: 1px solid black;
+}
+#footer-wrap {
+    background-color: black;
+    color: white;
+    position: fixed;
+    width: 100%;
+    padding: 15px;
+    bottom: 0;
+    font-family: sans-serif;
+    font-size: 14px;
+}
