@@ -1,12 +1,12 @@
 (function() {
  'use strict';
 
- var app = angular.module('QburstCabManagement',['ngRoute']);
+ var cabBookingApp = angular.module('QburstCabManagement',['ngRoute']);
 
 /**
  * Configure the Routes
  */
-app.config(['$routeProvider', function ($routeProvider) {
+cabBookingApp.config(['$routeProvider', function ($routeProvider) {
   $routeProvider
     // Home
     .when("/", {
