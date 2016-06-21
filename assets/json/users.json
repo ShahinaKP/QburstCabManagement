@@ -1,0 +1,57 @@
+{
+"users":[{ 
+			"userEmail": "rincy@qburst.com",
+     		"password": "12345678",
+     		"userType": "hr"
+		},
+		{ 
+			"userEmail": "nishin@qburst.com",
+     		"password": "12345678",
+     		"userType": "pm"
+		},
+		{ 
+			"userEmail": "shahina@qburst.com",
+     		"password": "12345678",
+     		"userType": "employee"
+		},
+		{ 
+			"userEmail": "ratheesh@qburst.com",
+     		"password": "12345678",
+     		"userType": "pm"
+		},
+		{ 
+			"userEmail": "manooja@qburst.com",
+     		"password": "12345678",
+     		"userType": "pm"
+		},
+		{ 
+			"userEmail": "ameena@qburst.com",
+     		"password": "12345678",
+     		"userType": "pm"
+		},
+		{ 
+			"userEmail": "saju@qburst.com",
+     		"password": "12345678",
+     		"userType": "pm"
+		},
+		{ 
+			"userEmail": "vinay@qburst.com",
+     		"password": "12345678",
+     		"userType": "employee"
+		},
+		{ 
+			"userEmail": "anusree@qburst.com",
+     		"password": "12345678",
+     		"userType": "employee"
+		},
+		{ 
+			"userEmail": "reshma@qburst.com",
+     		"password": "12345678",
+     		"userType": "employee"
+		},
+		{ 
+			"userEmail": "parvathys@qburst.com",
+     		"password": "12345678",
+     		"userType": "employee"
+		}]
+}

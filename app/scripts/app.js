@@ -1,1 +1,5 @@
-var app = angular.module('QburstCabManagement',[]);
+(function() {
+ 'use strict';
+
+ var app = angular.module('QburstCabManagement',[]);
+})();
