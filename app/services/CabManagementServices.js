@@ -11,11 +11,21 @@
 	);
 
 	//cab booking service
-	cabMngmtServices.service('bookCabService',
-		function(){
-			       
-		}    
-	);
+
+	cabBookingApp.service('CabManagementServices', [
+			'$rootScope',
+			function($rootScope) {
+				this.saveTrip = function(trip) {
+				$rootScope.trips.push({
+
+					name : nameOfPassenger.title,
+					DateOfJourney : dateAndTime.title,
+					BoardingPoint : boardingPoint.title,
+					Destination : destination.title,
+		
+			});
+
+	}]);
 
 
 	//Get all trips service

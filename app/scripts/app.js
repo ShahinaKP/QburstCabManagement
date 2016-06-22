@@ -9,18 +9,22 @@
 cabBookingApp.config(['$routeProvider', function ($routeProvider) {
   $routeProvider
     // Home
-    .when("/", {
+    .when("/login", {
 		templateUrl: "app/partials/login.html",
 	 	controller: "LoginController"
     })
     // Pages
-    .when("/bookcabDetails", {
+    .when("/", {
 		templateUrl: "app/partials/bookcabDetails.html",
 	 	controller: "BookCabController"
     })
     .when("/triplist", {
 		templateUrl: "app/partials/tripsList.html",
 	 	controller: "TripController"
+    })
+    .when("/cabHistory", {
+        templateUrl: "app/partials/cabHistory.html",
+        controller: "BookCabController"
     });
 }]);
 

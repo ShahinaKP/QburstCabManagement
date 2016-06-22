@@ -1,4 +1,4 @@
-<form name="MyForm" class="register" method="post" ng-submit="Add()">
+<form name="MyForm" class="register" method="post" ng-submit="add()">
         
     <fieldset class="row">
 
@@ -6,9 +6,32 @@
         <div class="formWrap">  
         <p>
             <label>Name *</label>
-            <input type="text" name="" value="" placeholder="" required="">
+            <input type="text" name="" value="" placeholder="" ng-model="nameOfPassenger" required="">
             <label>Date of Journey *</label>
-            <input type="text" name="" value="" placeholder="" ng-model="dateAndTime" required="">
+            
+            <div class="container">
+                <div class="row">
+                    <div class='col-sm-6'>
+                        <div class="form-group">
+                            <div class='input-group date' id='datetimepicker2'>
+                                <input type='text' class="form-control" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+                        $(function () {
+                            $('#datetimepicker2').datetimepicker({
+                                locale: 'ru'
+                            });
+                        });
+                    </script>
+                </div>
+            </div>
+
+
         </p>
         <p>
             <label>Boarding Point *</label>
