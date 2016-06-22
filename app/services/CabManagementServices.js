@@ -1,56 +1,59 @@
 (function() {
  'use strict';
 
-	var cabMngmtServices = angular.module('cabMngmtServices',[]);
 
-	//Login service
-	cabMngmtServices.service('loginService',
-		function(){
-			       
-		}    
-	);
+	angular.module('QburstCabManagement').service('cabMngmtServices',['$http','$rootScope',
+		function($http) {
+			return {
+				//Login service
+				loginService : function(useremail, password) {
+						var obj = {content:null};
+						$http.get('assets/json/users.json')
+						      .success(function(response) {
+						      console.log(useremail, password);
+						      obj.content = response;
+						});
+					    return obj;       
+				},
 
-	//cab booking service
-	cabMngmtServices.service('bookCabService',
-		function(){
-			       
-		}    
-	);
+				//cab booking service
+				bookCabService :function() {
+					$rootScope.trips.push({
+						name : nameOfPassenger.title,
+						DateOfJourney : dateAndTime.title,
+						BoardingPoint : boardingPoint.title,
+						Destination : destination.title
+					});       
+				}, 
 
 
-	//Get all trips service
-	cabMngmtServices.service('getAllTripsService',
-		function(){
-			       
-		}    
-	);
+				//Get all trips service
+				getAllTripsService : function() {
+						       
+				},  
 
-	//Get all trips of a user service
-	cabMngmtServices.service('getAllTripsForUserService',
-		function(){
-			       
-		}    
-	);
+				//Get all trips of a user service
+				getAllTripsForUserService :function() {
+						       
+				},  
 
-	//Get all trips of a approver service
-	cabMngmtServices.service('getAllTripsForApproverService',
-		function(){
-			       
-		}    
-	);
+				//Get all trips of a approver service
+				getAllTripsForApproverService : function() {
+						       
+				},  
 
-	//update status service
-	cabMngmtServices.service('updateTripStatusService',
-		function(){
-			       
-		}    
-	);
+				//update status service
+				updateTripStatusService :function() {
+						       
+				},  
 
-	//update vehicle details service
-	cabMngmtServices.service('updateVehicleDetailsService',
-		function(){
-			       
-		}    
-	);
+				//update vehicle details service
+				updateVehicleDetailsService : function() {
+						       
+				} 
+
+			}	
+
+	}]); 	
  
 })();

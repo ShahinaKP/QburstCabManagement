@@ -1,0 +1,13 @@
+<div ng-controller="BookCabController	">
+	<h2>Booked Trips</h2>
+	<div ng-repeat="history in cabHistory">
+		<div>
+		
+			<div class="passengerName">name: {{history.who}}</div>
+			<div class="journeyDate">Date of Journey: {{history.DateOfJourney}}</div>
+			<div class="boardingPoint">Boarding Point: {{history.BoardingPoint}}</div>
+			<div class="destination">Destination: {{history.Destination}}</div>
+
+		</div>
+	</div>
+</div>

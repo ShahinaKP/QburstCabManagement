@@ -1,17 +1,14 @@
 
-img#normal {
-    width: 10%;
-}
 body {
     margin: 0;
     padding: 0;
 }
 #header-wrap {
-    background: rgba(0, 0, 0, 0) url("../images/QBlogo.svg") no-repeat scroll 10px center / 7% auto;
+    background: rgba(0, 0, 0, 0) url("../images/QBlogo.svg") no-repeat scroll 30px center / 7% auto;
     border: 1px solid black;
     font-family: sans-serif;
     font-size: 30px;
-    padding: 5px 15px;
+    padding: 15px 30px;
     text-align: right;
 }
 #footer-wrap {
@@ -24,6 +21,108 @@ body {
     font-family: sans-serif;
     font-size: 14px;
 }
-form#loginForm {
-    width: 25%;
+#normal {
+    width: 10%;
+}
+.form-group {
+    margin-bottom: 25px;
+    display: flex;
+}
+.form-group label{
+	margin-right: 8px;
+	margin-top: 5px;
+}
+#loginForm {
+    width: 30%;
+    margin: 0 auto;
+}
+.container {
+    margin-top: 50px;
+}
+#loginForm h2 {
+    font-size: 20px;
+    margin-bottom: 45px;
+}
+.form-actions a{
+	margin-left: 20px;
+    color: #428BCA;
+    cursor: pointer;
+}
+.btn-primary {
+    width: 120px;
+ }
+.register {
+    height: 1000px;
+    width: 85%;
+    margin: 0 auto;
+    padding: 19px;
+    border-radius: 20px;
+}
+.register fieldset.row {
+    width: 100%;
+    float: left;
+    border: 1px solid black;
+}
+.register legend {
+    padding: 10px;
+    margin-left: 80px;
+    font-size: 25px;
+    font-weight: 100;
+    width: 155px;
+    font-family: sans-serif;
+    border: none;
+}
+fieldset.row p {
+    padding: 21px 0 22px 0;
+    font-weight: 500;
+    font-size: 10pt;
+}
+.register label {
+    width: 23%;
+    float: left;
+    text-align: right;
+    margin-right: 16px;
+    margin-top: 2px;
+}
+
+.register input {
+    width: 175px;
+    color: #000;
+    float: left;
+    margin-right: 28px;
+}
+input[type=checkbox] {
+    width: 14px !important;
+}
+.copassengers {
+    width: 31% !important;
+}
+.addPassenger {
+    float: right;
+    margin-right: 165px;
+    margin-top: 25px;
+}
+.addPassenger a{
+    cursor: pointer;
+}
+.formWrap {
+    width: 100%;
+    float: left;
+}
+input[type="submit"] {
+    float: none !important;
+    margin-right: 0 !important;
+    background: #265DAC;
+    border: none;
+    height: 30px;
+    color: white !important;
+    border-radius: 5px;
+    margin-top: 45px;
+    outline: none;
+}
+.btn-wrap {
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin-bottom: 35px;
 }
