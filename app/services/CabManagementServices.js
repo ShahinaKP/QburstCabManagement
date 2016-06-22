@@ -10,7 +10,7 @@
 						var obj = {content:null};
 						$http.get('assets/json/users.json')
 						      .success(function(response) {
-						      console.log(response);
+						      console.log(useremail, password);
 						      obj.content = response;
 						});
 					    return obj;       
