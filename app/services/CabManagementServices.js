@@ -1,9 +1,9 @@
+
 (function() {
  'use strict';
-
-
 	angular.module('QburstCabManagement').service('cabMngmtServices',['$http','$rootScope',
-		function($http) {
+		function($http,$rootScope) {
+			$rootScope.trips = [];
 			return {
 				//Login service
 				loginService : function(useremail, password) {
@@ -16,15 +16,18 @@
 					    return obj;       
 				},
 
-				//cab booking service
-				bookCabService :function() {
-					$rootScope.trips.push({
-						name : nameOfPassenger.title,
-						DateOfJourney : dateAndTime.title,
-						BoardingPoint : boardingPoint.title,
-						Destination : destination.title
-					});       
-				}, 
+				// book a cab service
+				getUserDetails: function(data){
+                    var formResponseData =  
+                        {                              
+                            "Name of Passenger": data.nameOfPassenger,
+                            "Date and Time": data.dateAndTime,
+                            "Boarding Point": data.boardingPoint,
+                            "Destination": data.destination,                                                       
+                        };
+                        console.log("hdg",formResponseData)
+                        return true;                       
+                },    
 
 
 				//Get all trips service
