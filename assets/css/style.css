@@ -128,3 +128,31 @@ input[type="submit"] {
     text-align: center;
     margin-bottom: 35px;
 }
+span#datetimepicker1 {
+    width: 200px;
+}
+.form-control {
+    height: 25px;
+    padding: 6px 12px;
+    border-radius: 0 !important;
+}
+.input-group-addon {
+    padding: 3px 12px;
+}
+p.morePassengers {
+    margin-left: 60px;
+}
+p.morePassengers span {
+    font-size: 15px;
+}
+p.morePassengers img {
+    width: 36px;
+}
+.removeBtn{
+    background: red;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    width: 69px;
+    height: 24px;
+}

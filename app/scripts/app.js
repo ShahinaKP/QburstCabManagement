@@ -14,7 +14,7 @@ cabBookingApp.config(['$routeProvider', function ($routeProvider) {
 	 	controller: "LoginController"
     })
     // Pages
-    .when("/bookcab", {
+    .when("/bookcabDetails", {
 		templateUrl: "app/partials/bookcabDetails.html",
 	 	controller: "BookCabController"
     })
@@ -24,7 +24,7 @@ cabBookingApp.config(['$routeProvider', function ($routeProvider) {
     })    
     .when("/cabHistory", {
         templateUrl: "app/partials/cabHistory.html",
-        controller: "BookCabController"
+        controller: "CabHistoryController"
     })
     .otherwise({
         redirect: '/'
