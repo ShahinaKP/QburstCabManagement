@@ -7,7 +7,7 @@
 		{ 
 			"userEmail": "nishin@qburst.com",
      		"password": "12345678",
-     		"userType": "pm"
+     		"userType": "approver"
 		},
 		{ 
 			"userEmail": "shahina@qburst.com",
@@ -17,22 +17,22 @@
 		{ 
 			"userEmail": "ratheesh@qburst.com",
      		"password": "12345678",
-     		"userType": "pm"
+     		"userType": "approver"
 		},
 		{ 
 			"userEmail": "manooja@qburst.com",
      		"password": "12345678",
-     		"userType": "pm"
+     		"userType": "approver"
 		},
 		{ 
 			"userEmail": "ameena@qburst.com",
      		"password": "12345678",
-     		"userType": "pm"
+     		"userType": "approver"
 		},
 		{ 
 			"userEmail": "saju@qburst.com",
      		"password": "12345678",
-     		"userType": "pm"
+     		"userType": "approver"
 		},
 		{ 
 			"userEmail": "vinay@qburst.com",

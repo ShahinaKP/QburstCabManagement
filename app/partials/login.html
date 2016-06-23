@@ -1,6 +1,6 @@
 <div class="container">
     
-    <form name="form" ng-submit="" role="form" id="loginForm">
+    <form name="form" ng-submit="" role="form" id="loginForm" autocomplete="off">
         <h2>Login</h2>
         <div class="form-group" ng-class="">
             <label for="username">Username:</label>
@@ -12,7 +12,8 @@
         </div>
         <div class="form-actions">
             <button type="submit" ng-click="submit()" class="btn btn-primary">Login</button>  
-            <a>forgot password</a>         
+            <a>forgot password</a>  
+            <label id="login-error" ng-bind="invalidLogin"></label>       
         </div>
     </form>
 </div>
