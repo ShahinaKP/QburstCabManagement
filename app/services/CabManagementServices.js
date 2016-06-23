@@ -7,13 +7,30 @@
 			return {
 				//Login service
 				loginService : function(useremail, password) {
-						var obj = {content:null};
-						$http.get('assets/json/users.json')
-						      .success(function(response) {
-						      console.log(useremail, password);
-						      obj.content = response;
+						var userObj = {};						
+						// $http returns a promise, which has a then function, which also returns a promise
+						var promise = $http.get('assets/json/users.json').then(function (response) {
+							// The then function here is an opportunity to modify the response
+							for (var i = 0; i < response.data.users.length; i++) {
+							    if (response.data.users[i].userEmail == useremail && 
+							    	response.data.users[i].password == password) {
+							    	userObj = {};
+							    	userObj.userType = response.data.users[i].userType;
+							    	userObj.loginMessage = "Logged in succesfully";
+							    	break;
+							    }
+							    else{
+							    	userObj = {};
+							    	userObj.userType = "invalid";
+							    	userObj.loginMessage = "Login Failed";
+							    }
+							}
+							// The return value gets picked up by the then in the controller.
+							return userObj;
 						});
-					    return obj;       
+						// Return the promise to the controller
+						return promise;	        
+					           
 				},
 
 				//cab booking service
