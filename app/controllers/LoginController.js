@@ -8,22 +8,17 @@
 					cabMngmtServices.loginService($scope.useremail, $scope.password).then(function(d){
 				        $scope.loginStatus = d;
 
-				        $scope.userType = $scope.loginStatus.userType
-				        switch ($scope.userType) {
-				            case 'employee':
-								$location.path('/bookcab');
-				                break;
-				            case 'approver':
-				                $location.path('/triplist');
-				                break;
-			                case 'hr':
-				                $location.path('/triplist');
-				                break;
-				            case 'invalid':
-				            	$scope.invalidLogin = "Invalid Username or Password.";
-
-				            default:
+				        if($scope.loginStatus.userType != 'invalid'){
+				        	//share user data
+							//cabMngmtServices.shareUserDataService.setUserData($scope.useremail, $scope.loginStatus.userType);
+				        	localStorage.setItem("useremail", $scope.useremail);
+				        	localStorage.setItem("usertype", $scope.loginStatus.userType);
+				        	$location.path('/bookcab');
 				        }
+				        else{
+				        	$scope.invalidLogin = "Invalid Username or Password.";
+				        }
+				        
 				    });
 				}
 			}

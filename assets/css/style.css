@@ -21,6 +21,14 @@ body {
     font-family: sans-serif;
     font-size: 14px;
 }
+
+.navbar-nav>li {
+    border-right: 1px solid #e7e7e7;
+}
+
+.logout-menu{
+    border: 0;
+}
 #normal {
     width: 10%;
 }
