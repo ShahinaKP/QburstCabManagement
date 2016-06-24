@@ -1,0 +1,30 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>    
+    </div>
+    <div class="navbar-collapse collapse">   
+        <ul ng-if="bookScreenTabType==='forEmployee'" class="nav navbar-nav navbar-right">
+            <li ng-class="{ active: isActive('/bookcab')}"><a href="#bookcab">Book Cab</a></li>
+            <li ng-class="{ active: isActive('/bookhistory')}"><a href="#bookhistory">Book History</a></li>
+            <li ng-class="{ active: isActive('/')}" class="logout-menu"><a href="#">Logout</a></li>
+        </ul>
+
+        <ul ng-if="bookScreenTabType==='forApprover'" class="nav navbar-nav navbar-right">
+            <li ng-class="{ active: isActive('/bookcab')}"><a href="#bookcab">Book Cab</a></li>
+            <li ng-class="{ active: isActive('/bookhistory')}"><a href="#bookhistory">Book History </a></li>
+            <li ng-class="{ active: isActive('/triplist')}"><a href="#triplist">Approve Trips</a></li>
+            <li ng-class="{ active: isActive('/')}" class="logout-menu"><a href="#">Logout</a></li>
+        </ul>
+
+        <ul ng-if="bookScreenTabType==='forHr'" class="nav navbar-nav navbar-right">
+            <li ng-class="{ active: isActive('/bookcab')}"><a href="#bookcab">Book Cab</a></li>
+            <li ng-class="{ active: isActive('/bookhistory')}"><a href="#bookhistory">Book History </a></li>
+            <li ng-class="{ active: isActive('/triplist')}"><a href="#triplist">Schedule Trips</a></li>
+            <li ng-class="{ active: isActive('/')}" class="logout-menu"><a href="#">Logout</a></li>
+        </ul>
+    </div>
+</nav>

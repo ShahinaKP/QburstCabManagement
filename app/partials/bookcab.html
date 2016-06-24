@@ -1,0 +1,69 @@
+<div ng-include='"app/templates/menu.html"' ng-controller="MenuController"></div>
+<form name="MyForm" class="register" method="post" ng-submit="add()" novalidate >
+        
+    <fieldset class="row">
+
+        <legend>Book a Cab</legend>
+        <div class="formWrap">  
+        <p>
+            
+            <label>Name *</label>
+            <input type="text" name="" value="" placeholder="" ng-model="trip.nameOfPassenger" required="">
+            <label>Date of Journey *</label>
+            
+            <span class='input-group date' id='datetimepicker1'>
+                <input type='text' class="form-control" ng-model="trip.dateAndTime" required=""/>
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </span>
+            <!-- <div class="container">
+                <div class="row">
+                    <div class='col-sm-6'>
+                        <div class="form-group">
+                            <div class='input-group date' id='datetimepicker2'>
+                                <input type='text' class="form-control" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div> -->
+
+
+        </p>
+        <p>
+            <label>Boarding Point *</label>
+            <input type="text" name="" value="" placeholder="" ng-model="trip.boardingPoint" required="">
+            <label>Destination *</label>
+            <input type="text" name="" value="" placeholder="" ng-model="trip.destination" required="">
+        </p>
+        
+        <p class="morePassengers">
+            <span>Add more Passengers</span>
+            <a href="" ng-click="showme=true"><img src="../QburstCabManagement/assets/images/plainicon.com-43939-256px.png"></a>
+        </p>
+
+        <p ng-show="showme">
+            <button ng-click="showme=false" class="removeBtn">Remove</button> 
+            <label>Name *</label>
+            <input type="text" name="" value="" placeholder="" ng-model="trip.coPassengerName">
+            <label>Destination *</label>
+            <input type="text" name="" value="" placeholder="" ng-model="trip.coPssengerDestination">
+        </p>
+
+
+        </div>
+        <div class="btn-wrap"><input type="submit" name="Submit" value="Submit"  ng-disabled="statusForm.$invalid"></div>
+    </fieldset>
+     
+    
+</form>
+
+
+
+
+
