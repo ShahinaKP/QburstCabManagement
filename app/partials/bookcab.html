@@ -1,67 +1,78 @@
 <div ng-include='"app/templates/menu.html"' ng-controller="MenuController"></div>
-<form name="MyForm" class="register" method="post" ng-submit="add()" novalidate >
+<form name="form" class="register">
         
     <fieldset class="row">
 
         <legend>Book a Cab</legend>
-        <div class="formWrap">  
-        <p>
-            
-            <label>Name *</label>
-            <input type="text" name="" value="" placeholder="" ng-model="trip.nameOfPassenger" required="">
-            <label>Date of Journey *</label>
-            
-            <span class='input-group date' id='datetimepicker1'>
-                <input type='text' class="form-control" ng-model="trip.dateAndTime" required=""/>
-                <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-calendar"></span>
-                </span>
-            </span>
-            <!-- <div class="container">
-                <div class="row">
-                    <div class='col-sm-6'>
-                        <div class="form-group">
-                            <div class='input-group date' id='datetimepicker2'>
-                                <input type='text' class="form-control" />
-                                <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    
+        <div class="row form-row">
+            <div class="form-group">
+                <label for="name" class="col-md-2">Name *</label>
+                <div class="col-md-4">
+                    <input type="name" class="form-control" id="name" ng-model="formData.name" placeholder="" required>
                 </div>
-            </div> -->
-
-
-        </p>
-        <p>
-            <label>Boarding Point *</label>
-            <input type="text" name="" value="" placeholder="" ng-model="trip.boardingPoint" required="">
-            <label>Destination *</label>
-            <input type="text" name="" value="" placeholder="" ng-model="trip.destination" required="">
-        </p>
-        
-        <p class="morePassengers">
-            <span>Add more Passengers</span>
-            <a href="" ng-click="showme=true"><img src="../QburstCabManagement/assets/images/plainicon.com-43939-256px.png"></a>
-        </p>
-
-        <p ng-show="showme">
-            <button ng-click="showme=false" class="removeBtn">Remove</button> 
-            <label>Name *</label>
-            <input type="text" name="" value="" placeholder="" ng-model="trip.coPassengerName">
-            <label>Destination *</label>
-            <input type="text" name="" value="" placeholder="" ng-model="trip.coPssengerDestination">
-        </p>
-
-
+      
+                <label for="dateandtime" class="col-md-2">Date of Journey *</label>
+                <div class="col-md-4 input-group date" id='datetimepicker'>
+                    <input type='text' class="form-control" id="dateandtime" ng-model="formData.dateAndTime" required/>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
         </div>
-        <div class="btn-wrap"><input type="submit" name="Submit" value="Submit"  ng-disabled="statusForm.$invalid"></div>
+
+        <div class="row form-row">
+            <div class="form-group">
+                <label for="boarding-point" class="col-md-2">Boarding Point *</label>
+                <div class="col-md-4">
+                    <input type="name" class="form-control" ng-model="formData.boardingPoint" placeholder="" required>
+                </div>
+      
+                <label for="exampleInputPassword1" class="col-md-2">Destination *</label>
+                <div class="col-md-4">
+                    <input type="name" class="form-control" ng-model="formData.destination" placeholder="" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="row form-row check">
+            <input type="checkbox" id="co-passengers-check" ng-model="copassengers.checked" ng-change="checkForPassengers(copassengers.checked)">
+            <label for="co-passengers-check">Any Co-passengers</label>
+        </div>
+
+        <div class="row form-row" ng-show="copassengers.checked">
+            <div class="form-group">
+                <div class="co-pass-details" ng-repeat="coPassenger in formData.coPassengers">
+                    <label for="co-passenger-name" class="col-md-2">Name *</label>
+                    <div class="col-md-4">
+                        <input type="name" class="form-control" ng-model="coPassenger.name" id="co-passenger-name" placeholder="" required>
+                    </div>
+          
+                    <label for="exampleInputPassword1" class="col-md-2">Destination *</label>
+                    <div class="col-md-3">
+                        <input type="name" class="form-control" ng-model="coPassenger.destination" placeholder="" required>
+                    </div>
+                    <div class="col-md-1">
+                        <button ng-click="removePasssenger($index)" ng-init="count=0">Remove</button>
+                    </div>
+                </div>
+                <div  class="col-md-12 add-passenger-btn" ng-show="formData.coPassengers.length">
+                    <button ng-click="addPasssenger()">Add more passenger</button>
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-md-12 button-grp">
+            <button type="submit" name="submit" class="btn btn-primary" ng-click="bookCab()">Book Cab</button>
+            <button type="cancel" name="" class="btn" ng-click="cancelBooking()">Cancel</button>
+        </div>
+        </div>
+
     </fieldset>
      
     
 </form>
+
+
 
 
 

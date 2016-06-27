@@ -3,36 +3,47 @@
 
 	angular.module('QburstCabManagement').controller('BookCabController', ['$scope','$location','$rootScope','cabMngmtServices',
 		function($scope, $location, $rootScope, cabMngmtServices) {	
-
-			/*$scope.userEmal = localStorage.getItem("useremail");		
-			$scope.userType = localStorage.getItem("usertype");	
-	        switch ($scope.userType) {
-	            case 'employee':
-					$scope.bookScreenTabType = 'forEmployee';
-	                break;
-	            case 'approver':
-	                $scope.bookScreenTabType = 'forApprover';
-	                break;
-                case 'hr':
-	                $scope.bookScreenTabType = 'forHr';
-	                break;	            
-	            default:
-	        }*/
-
-			$scope.add = function() {
-
-				var success = cabMngmtServices.getUserDetails($scope.trip);
-
-				
-					if(success){
-						localStorage.setItem('trip', JSON.stringify($scope.trip));
-						$location.path('/cabHistory');
-					};
-
-			};
 			$(function () {
-                $('#datetimepicker1').datetimepicker();
+                $('#datetimepicker').datetimepicker();
             });
+	        
+			$scope.addPasssenger = function() {
+				$scope.formData.coPassengers.push([ {name: '',
+		    									     destination:''
+		    									  }]);
+			}
+
+			$scope.removePasssenger = function(index) {
+				$scope.formData.coPassengers.splice(index,1);
+				if(!$scope.formData.coPassengers.length){
+					$scope.copassengers.checked = false;
+				}
+				
+			}
+			$scope.checkForPassengers = function(isChecked){
+				if(isChecked){
+					$scope.formData.coPassengers = [ {name: '',
+			    									  destination:''
+			    									}];
+				}				
+			}
+
+			$scope.bookCab = function() {
+				$scope.formData.userEmail = localStorage.getItem("useremail")
+				localStorage.setItem("tripDetails", JSON.stringify($scope.formData));
+				//$scope.clearFields();
+				alert('Cab booked succesfully!');
+				$scope.clearFields();
+			};
+
+			$scope.clearFields = function(){
+				$scope.formData = {};
+			};
+
+			$scope.cancelBooking = function() {
+				
+				
+			};
 
 		} ]);
 	 
