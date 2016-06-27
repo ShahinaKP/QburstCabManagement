@@ -45,6 +45,33 @@
                         console.log("hdg",formResponseData)
                         return true;                       
                 },    
+				//share data between services
+				shareUserDataService: function() {
+					var data = {
+				        userEmail: '',
+				        userType: ''
+				    };
+
+				    return {
+				        getUserData: function () {
+				            return data;
+				        },
+				        setUserData: function (userEmail, userType) {
+				            data.userEmail = userEmail;
+				            data.userType = userType;
+				        }
+				    };
+				},
+
+				//cab booking service
+				bookCabService :function() {
+					$rootScope.trips.push({
+						name : nameOfPassenger.title,
+						DateOfJourney : dateAndTime.title,
+						BoardingPoint : boardingPoint.title,
+						Destination : destination.title
+					});       
+				}, 
 
 
 				//Get all trips service

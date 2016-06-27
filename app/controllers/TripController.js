@@ -1,11 +1,9 @@
 (function() {
  'use strict';
 
-	cabBookingApp.controller('TripController' , ['$scope','getAllTripsService',
-		function($scope, getAllTripsService){
+	angular.module('QburstCabManagement').controller('TripController', ['$scope','$location','cabMngmtServices',
+		function($scope, $location, cabMngmtServices) {			
 
-		}
-
-	]);
+		} ]);
  
 })();
