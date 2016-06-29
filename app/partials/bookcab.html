@@ -36,11 +36,11 @@
         </div>
 
         <div class="row form-row check">
-            <input type="checkbox" id="co-passengers-check" ng-model="copassengers.checked" ng-change="checkForPassengers(copassengers.checked)">
+            <input type="checkbox" id="co-passengers-check" ng-model="coPassengers.checked" ng-change="checkForPassengers(coPassengers.checked)">
             <label for="co-passengers-check">Any Co-passengers</label>
         </div>
 
-        <div class="row form-row" ng-show="copassengers.checked">
+        <div class="row form-row" ng-show="coPassengers.checked">
             <div class="form-group">
                 <div class="co-pass-details" ng-repeat="coPassenger in formData.coPassengers">
                     <label for="co-passenger-name" class="col-md-2">Name *</label>

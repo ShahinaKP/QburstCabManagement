@@ -6,7 +6,7 @@
 			$(function () {
                 $('#datetimepicker').datetimepicker();
             });
-	        
+	        $scope.formData = {};
 			$scope.addPasssenger = function() {
 				$scope.formData.coPassengers.push([ {name: '',
 		    									     destination:''
@@ -16,7 +16,7 @@
 			$scope.removePasssenger = function(index) {
 				$scope.formData.coPassengers.splice(index,1);
 				if(!$scope.formData.coPassengers.length){
-					$scope.copassengers.checked = false;
+					$scope.coPassengers.checked = false;
 				}
 				
 			}
@@ -30,10 +30,10 @@
 
 			$scope.bookCab = function() {
 				$scope.formData.userEmail = localStorage.getItem("useremail")
-				localStorage.setItem("tripDetails", JSON.stringify($scope.formData));
+				//localStorage.setItem("tripDetails", JSON.stringify($scope.formData));
 				//$scope.clearFields();
-				alert('Cab booked succesfully!');
-				$scope.clearFields();
+				//alert('Cab booked succesfully!');
+				//$scope.clearFields();
 			};
 
 			$scope.clearFields = function(){
