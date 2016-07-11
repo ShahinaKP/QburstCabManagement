@@ -6,16 +6,18 @@
 			$scope.submit = function(useremail, password){
 				if($scope.useremail && $scope.password){
 					cabMngmtServices.loginService($scope.useremail, $scope.password).then(function(d){
-				        $scope.loginStatus = d;
-
-				        if($scope.loginStatus.userType != 'invalid'){
+				        $scope.loggedData = d;
+						$scope.userType = d.role;
+						localStorage.setItem("usertype", $scope.userType);
+						$location.path('/bookcab');
+				        /*if($scope.loginStatus.userType != 'invalid'){
 				        	localStorage.setItem("useremail", $scope.useremail);
 				        	localStorage.setItem("usertype", $scope.loginStatus.userType);
 				        	$location.path('/bookcab');
 				        }
 				        else{
 				        	$scope.invalidLogin = "Invalid Username or Password.";
-				        }
+				        }*/
 				        
 				    });
 				}

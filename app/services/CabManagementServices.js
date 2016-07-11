@@ -1,13 +1,12 @@
-
 (function() {
  'use strict';
-	angular.module('QburstCabManagement').service('cabMngmtServices',['$http','$rootScope',
-		function($http,$rootScope) {
+	angular.module('QburstCabManagement').service('cabMngmtServices',['$http','$rootScope','$q',
+		function($http,$rootScope,$q) {
 			$rootScope.trips = [];
 			return {
 				//Login service
 				loginService : function(useremail, password) {
-						var userObj = {};						
+						/*var userObj = {};						
 						// $http returns a promise, which has a then function, which also returns a promise
 						var promise = $http.get('assets/json/users.json').then(function (response) {
 							// The then function here is an opportunity to modify the response
@@ -29,12 +28,46 @@
 							return userObj;
 						});
 						// Return the promise to the controller
+						return promise;*/
+
+						var API_URL = 'http://10.9.12.122:3000/users/login';
+						var deferred = $q.defer();
+						var data = {
+			                email: useremail, 
+			                password: password
+			            };
+						var promise = $http.post(API_URL,data).then(function(response){							
+							return response.data.result;
+						}, function() {
+							deferred.reject(arguments);
+							return deferred.reject(arguments);
+						});						
+
 						return promise;	        
 					           
 				},
 
+				//get all managers
+				getAllApprovers: function() {	
+						var approvers = [];
+
+						var API_URL = 'http://10.9.12.122:3000/users/getAllApprovers';
+						var deferred = $q.defer();
+						var promise = $http.get(API_URL).then(function(response){							
+							approvers = response.data.result;							
+							deferred.resolve(approvers);
+							return approvers;
+						}, function() {
+							deferred.reject(arguments);
+							return deferred.reject(arguments);
+						});						
+
+						return promise;
+						
+				},
+
 				// book a cab service
-				getUserDetails: function(data){
+				getUserDetails: function(data) {
                     var formResponseData =  
                         {                              
                             "Name of Passenger": data.nameOfPassenger,
@@ -44,7 +77,8 @@
                         };
                         console.log("hdg",formResponseData)
                         return true;                       
-                },    
+                },
+
 				//share data between services
 				shareUserDataService: function() {
 					var data = {

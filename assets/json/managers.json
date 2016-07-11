@@ -1,0 +1,27 @@
+{
+"managers":[{ 
+			"userEmail": "nishin@qburst.com",
+     		"password": "12345678",
+     		"userType": "approver"
+		},
+		{ 
+			"userEmail": "ratheesh@qburst.com",
+     		"password": "12345678",
+     		"userType": "approver"
+		},
+		{ 
+			"userEmail": "manooja@qburst.com",
+     		"password": "12345678",
+     		"userType": "approver"
+		},
+		{ 
+			"userEmail": "ameena@qburst.com",
+     		"password": "12345678",
+     		"userType": "approver"
+		},
+		{ 
+			"userEmail": "saju@qburst.com",
+     		"password": "12345678",
+     		"userType": "approver"
+		}
+}
