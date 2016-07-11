@@ -16,7 +16,7 @@ body {
 #footer-wrap {
     background-color: black;
     color: white;
-    /*position: fixed;*/
+    position: fixed;
     width: 100%;
     padding: 15px;
     bottom: 0;
@@ -146,5 +146,9 @@ input[type="submit"] {
     height: 30px;
     padding: 6px 12px;
     border-radius: 0 !important;
+}
+
+.row.form-row label {
+    text-align: right;
 }
 

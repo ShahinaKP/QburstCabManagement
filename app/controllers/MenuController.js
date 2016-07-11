@@ -3,16 +3,15 @@
 
 	angular.module('QburstCabManagement').controller('MenuController', ['$scope','$location','cabMngmtServices',
 		function($scope, $location, cabMngmtServices) {	
-			$scope.userEmal = localStorage.getItem("useremail");		
 			$scope.userType = localStorage.getItem("usertype");	
 	        switch ($scope.userType) {
-	            case 'employee':
+	            case '1':
 					$scope.bookScreenTabType = 'forEmployee';
 	                break;
-	            case 'approver':
+	            case '3':
 	                $scope.bookScreenTabType = 'forApprover';
 	                break;
-                case 'hr':
+                case '2':
 	                $scope.bookScreenTabType = 'forHr';
 	                break;	            
 	            default:
