@@ -1,10 +1,10 @@
-
-body {
+    body {
     margin: 0;
     padding: 0;
 }
+
 #header-wrap {
-    background: rgba(0, 0, 0, 0) url("../images/QBlogo.svg") no-repeat scroll 30px center / 7% auto;
+    background: rgba(0, 0, 0, 0) url("../assets/images/QBlogo.svg") no-repeat scroll 30px center / 7% auto;
     border: 1px solid black;
     border-left: 0;
     border-right: 0;
@@ -13,6 +13,7 @@ body {
     padding: 15px 30px;
     text-align: center;
 }
+
 #footer-wrap {
     background-color: black;
     color: white;
@@ -23,9 +24,11 @@ body {
     font-family: sans-serif;
     font-size: 14px;
 }
+
 .navbar-collapse {
     padding-left: 0;
 }
+
 .navbar-nav>li {
     border-right: 1px solid #e7e7e7;
 }
@@ -33,6 +36,7 @@ body {
 .logout-menu {
     border: 0;
 }
+
 #normal {
     width: 10%;
 }
@@ -41,9 +45,11 @@ body {
     width: 30%;
     margin: 0 auto;
 }
+
 .container {
     margin-top: 50px;
 }
+
 #loginForm h2 {
     font-size: 20px;
     margin-bottom: 45px;
@@ -51,22 +57,25 @@ body {
 
 #login-error {
     color: #ff0000;
-    padding-top: 10px;    
+    padding-top: 10px;
     width: 100%;
 }
 
 .btn-primary {
     width: 120px;
- }
+}
+
 .register {
     width: 85%;
     margin: 0 auto;
     padding: 20px;
     border-radius: 20px;
 }
+
 .register fieldset.row {
     border: 1px solid black;
 }
+
 .register legend {
     padding: 10px;
     margin-left: 80px;
@@ -86,6 +95,7 @@ body {
 .form-row.check {
     padding-left: 14%;
 }
+
 .form-group label {
     text-align: right;
 }
@@ -106,7 +116,7 @@ body {
     padding: 10px 0;
 }
 
-.button-grp{
+.button-grp {
     text-align: center;
 }
 
@@ -118,15 +128,18 @@ body {
 input[type=checkbox] {
     width: 14px !important;
 }
+
 .copassengers {
     width: 31% !important;
 }
+
 .addPassenger {
     float: right;
     margin-right: 165px;
     margin-top: 25px;
 }
-.addPassenger a{
+
+.addPassenger a {
     cursor: pointer;
 }
 
@@ -152,3 +165,6 @@ input[type="submit"] {
     text-align: right;
 }
 
+.error-msg {
+    color: #ff0000;
+}

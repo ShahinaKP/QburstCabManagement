@@ -1,45 +1,40 @@
 <div ng-include='"app/templates/menu.html"' ng-controller="MenuController"></div>
-<form name="form" class="register">
-        
+<form name="bookform" class="register" novalidate ng-submit="bookCab();">
     <fieldset class="row">
-
         <legend>Book a Cab</legend>
         <div class="row form-row">
             <div class="form-group">
                 <label for="name" class="col-md-2">Name *</label>
                 <div class="col-md-4">
-                    <input type="name" class="form-control" id="name" ng-model="formData.name" placeholder="" required>
+                    <input type="name" class="form-control" name="myName" ng-model="formData.name" placeholder="" required>
+                    <span ng-show="submitted && bookform.myName.$error.required" class="error-msg">The name is required.</span>
                 </div>
-      
                 <label for="dateandtime" class="col-md-2">Date of Journey *</label>
-                <div class="col-md-4 input-group date" id='datetimepicker'  ng-model="date">
-                    <input type='text' class="form-control" required/>
+                <div class="col-md-4 input-group date" id="datetimepicker">
+                    <input type='text' class="form-control" name="dateTime" ng-model="formData.date" required/>
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
+                    <!-- <span ng-show="submitted && bookform.dateTime.$error.required" class="error-msg">The date is required.</span> -->
                 </div>
             </div>
         </div>
-
         <div class="row form-row">
             <div class="form-group">
                 <label for="boarding-point" class="col-md-2">Boarding Point *</label>
                 <div class="col-md-4">
                     <input type="name" class="form-control" ng-model="formData.boardingPoint" placeholder="" required>
                 </div>
-      
                 <label for="exampleInputPassword1" class="col-md-2">Destination *</label>
                 <div class="col-md-4">
                     <input type="name" class="form-control" ng-model="formData.destination" placeholder="" required>
                 </div>
             </div>
         </div>
-
         <div class="row form-row check">
             <input type="checkbox" id="co-passengers-check" ng-model="coPassengers.checked" ng-change="checkForPassengers(coPassengers.checked)">
             <label for="co-passengers-check">Any Co-passengers</label>
         </div>
-
         <div class="row form-row" ng-show="coPassengers.checked">
             <div class="form-group">
                 <div class="co-pass-details" ng-repeat="coPassenger in formData.coPassengers">
@@ -47,7 +42,6 @@
                     <div class="col-md-4">
                         <input type="name" class="form-control" ng-model="coPassenger.name" id="co-passenger-name" placeholder="" required>
                     </div>
-          
                     <label for="exampleInputPassword1" class="col-md-2">Destination *</label>
                     <div class="col-md-3">
                         <input type="name" class="form-control" ng-model="coPassenger.destination" placeholder="" required>
@@ -56,39 +50,27 @@
                         <button ng-click="removePasssenger($index)" ng-init="count=0">Remove</button>
                     </div>
                 </div>
-                <div  class="col-md-12 add-passenger-btn" ng-show="formData.coPassengers.length">
-                    <button ng-click="addPasssenger()">Add more passenger</button>
+                <div class="col-md-12 add-passenger-btn" ng-show="formData.coPassengers.length">
+                    <button type="button" ng-click="addPasssenger()">Add more passenger</button>
                 </div>
             </div>
         </div>
-
         <div class="row form-row">
             <label for="watcher-autocomplete" class="col-md-2">Watcher *</label>
             <div class="col-md-10">
-                <input type="text"  class="form-control" ng-change="loadWatchers()" ng-model="watcher" list="watcher-autocomplete" required/>
+                <input type="text" class="form-control" ng-change="loadWatchers()" ng-model="watcher" list="watcher-autocomplete" required/>
                 <datalist id="watcher-autocomplete">
-                    <option ng-repeat="object in watchersList" >{{object.email}}</option>
+                    <option ng-repeat="object in watchersList">{{object.email}}</option>
                 </datalist>
-
-
-    <datalist id="datalist" ng-change="update()" ng-model="item">
-        <o
+                <datalist id="datalist" ng-change="update()" ng-model="item">
+                    <option ng-repeat=""></option>
+                </datalist>
             </div>
         </div>
         <div class="form-group col-md-12 button-grp">
-            <button type="submit" name="submit" class="btn btn-primary" ng-click="bookCab()">Book Cab</button>
+            <button type="submit" name="submit" class="btn btn-primary">Book Cab</button>
             <button type="cancel" name="" class="btn" ng-click="cancelBooking()">Cancel</button>
         </div>
         </div>
-
     </fieldset>
-     
-    
 </form>
-
-
-
-
-
-
-

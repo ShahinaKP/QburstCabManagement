@@ -1,4 +1,4 @@
-angular.module('QburstCabManagement', []).directive('autoComplete', function($timeout) {
+angular.module('QburstCabManagement').directive('autoComplete', function($timeout) {
     return function(scope, iElement, iAttrs) {
             /*iElement.autocomplete({
                 source: scope[iAttrs.uiItems],

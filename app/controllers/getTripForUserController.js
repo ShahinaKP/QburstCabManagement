@@ -1,4 +1,4 @@
-QburstCabManagement.controller('getTripForUserController',
+angular.module('QburstCabManagement').controller('getTripForUserController',
 	['$scope','$http','$location','$rootScope',
 	'dataService','getTripForUserService',
 	function($scope, $http, $location, $rootScope,dataService, getTripForUserService) {

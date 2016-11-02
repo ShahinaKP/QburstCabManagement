@@ -9,6 +9,7 @@
 				        $scope.loggedData = d;
 						$scope.userType = d.role;
 						localStorage.setItem("usertype", $scope.userType);
+						localStorage.setItem("userId", d.id);
 						$location.path('/bookcab');
 				        /*if($scope.loginStatus.userType != 'invalid'){
 				        	localStorage.setItem("useremail", $scope.useremail);

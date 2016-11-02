@@ -6,30 +6,6 @@
 			return {
 				//Login service
 				loginService : function(useremail, password) {
-						/*var userObj = {};						
-						// $http returns a promise, which has a then function, which also returns a promise
-						var promise = $http.get('assets/json/users.json').then(function (response) {
-							// The then function here is an opportunity to modify the response
-							for (var i = 0; i < response.data.users.length; i++) {
-							    if (response.data.users[i].userEmail == useremail && 
-							    	response.data.users[i].password == password) {
-							    	userObj = {};
-							    	userObj.userType = response.data.users[i].userType;
-							    	userObj.loginMessage = "Logged in succesfully";
-							    	break;
-							    }
-							    else{
-							    	userObj = {};
-							    	userObj.userType = "invalid";
-							    	userObj.loginMessage = "Login Failed";
-							    }
-							}
-							// The return value gets picked up by the then in the controller.
-							return userObj;
-						});
-						// Return the promise to the controller
-						return promise;*/
-
 						var API_URL = 'http://10.9.12.122:3000/users/login';
 						var deferred = $q.defer();
 						var data = {
@@ -75,7 +51,7 @@
                             "Boarding Point": data.boardingPoint,
                             "Destination": data.destination,                                                       
                         };
-                        console.log("hdg",formResponseData)
+                        console.log("hdg",formResponseData);
                         return true;                       
                 },
 
@@ -132,8 +108,7 @@
 				updateVehicleDetailsService : function() {
 						       
 				} 
-
-			}	
+			};	
 
 	}]); 	
  
